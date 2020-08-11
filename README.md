@@ -7,7 +7,8 @@ U-Net Network ref - 	Olaf Ronneberger, Philipp Fischer, and .omas Brox, “U-net
 
 DATASET ref - 	H. Abdi, S. Kasaei, and M. Mehdizadeh, “Automatic segmentation of mandible in panoramic x-ray,” J. Med. Imaging, vol. 2, no. 4, p. 44003, 2015
 
-Link for DATASET [https://data.mendeley.com/datasets/hxt48yk462/1]
+Link DATASET for only original images. You must creat your masks from images for neural network. [https://data.mendeley.com/datasets/hxt48yk462/1]
+
 <img src="https://github.com/SerdarHelli/Semantic-Segmentation-of-Teeth-in-Panoramic-X-ray-Image/blob/master/Viewing_Estimations/Figures/example.png" alt="Results" width="1024" height="512">
 This example of the model’s output has an effective segmentation map.
 <img src="https://github.com/SerdarHelli/Semantic-Segmentation-of-Teeth-in-Panoramic-X-ray-Image/blob/master/Viewing_Estimations/Figures/exampleofcca.png" alt="Results" width="1024" height="512">
