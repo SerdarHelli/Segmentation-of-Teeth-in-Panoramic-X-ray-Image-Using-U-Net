@@ -6,7 +6,8 @@ The authors of this article are Selahattin Serdar Helli and Andaç Hamamcı  wit
 U-Net Network ref - 	Olaf Ronneberger, Philipp Fischer, and .omas Brox, “U-net: Convolutional networks for biomedical image segmentation,” in Medical Image Computing and Computer-Assisted Intervention (MICCAI). Springer, 2015, pp. 234–241.
 
 DATASET ref - 	H. Abdi, S. Kasaei, and M. Mehdizadeh, “Automatic segmentation of mandible in panoramic x-ray,” J. Med. Imaging, vol. 2, no. 4, p. 44003, 2015
-Link[https://data.mendeley.com/datasets/hxt48yk462/1]
+
+Link for DATASET [https://data.mendeley.com/datasets/hxt48yk462/1]
 <img src="https://github.com/SerdarHelli/Semantic-Segmentation-of-Teeth-in-Panoramic-X-ray-Image/blob/master/Viewing_Estimations/Figures/example.png" alt="Results" width="1024" height="512">
 This example of the model’s output has an effective segmentation map.
 <img src="https://github.com/SerdarHelli/Semantic-Segmentation-of-Teeth-in-Panoramic-X-ray-Image/blob/master/Viewing_Estimations/Figures/exampleofcca.png" alt="Results" width="1024" height="512">
