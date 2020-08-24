@@ -10,7 +10,7 @@ DATASET ref - 	H. Abdi, S. Kasaei, and M. Mehdizadeh, “Automatic segmentation 
 [Link DATASET for only original images.](https://data.mendeley.com/datasets/hxt48yk462/1)
 
 
-[All masks have created from original image by us. You can download MASKs on this repository. Note That : MASKS shared in numpy array](https://github.com/SerdarHelli/Segmentation-of-Teeth-in-Panoramic-X-ray-Image-Using-U-Net/tree/master/DATA)
+[All masks have created from original image by us. You can download MASKs on this repository. Note That : MASKS shared in numpy array In the future, we will share original masks](https://github.com/SerdarHelli/Segmentation-of-Teeth-in-Panoramic-X-ray-Image-Using-U-Net/tree/master/DATA)
 
 
 <img src="https://github.com/SerdarHelli/Semantic-Segmentation-of-Teeth-in-Panoramic-X-ray-Image/blob/master/Viewing_Estimations/Figures/example.png" alt="Results" width="1024" height="512">
