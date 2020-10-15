@@ -18,5 +18,4 @@ This example of the model’s output has an effective segmentation map.
 <img src="https://github.com/SerdarHelli/Semantic-Segmentation-of-Teeth-in-Panoramic-X-ray-Image/blob/master/Viewing_Estimations/Figures/exampleofcca.png" alt="Results" width="1024" height="512">
 In this example of binary image processing, teeth have successfully labeled
 <img src="https://github.com/SerdarHelli/Semantic-Segmentation-of-Teeth-in-Panoramic-X-ray-Image/blob/master/Viewing_Estimations/Figures/Architecture.png" alt="Results" width="1024" height="512">
-Our neural network architecture. Each blue box corresponds to a multi-channel feature map. The number of channels is denoted on top of the
-box. The x-y-size is provided at the lower-left edge of the box. White boxes represent copied feature maps. The arrows denote the different operations
+Our neural network architecture.
