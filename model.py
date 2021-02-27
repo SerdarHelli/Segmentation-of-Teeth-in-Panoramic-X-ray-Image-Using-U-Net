@@ -14,47 +14,64 @@ import numpy as np
 
 
 
-x1=np.load("/x_train.npy")
-x2=np.load("/x_test.npy")
-y1=np.load("/y_train1.npy")
-y2=np.load("/y_test1.npy")
-x_augmention=np.load("/x_augmention.npy")
-y_augmention=np.load("y_augmention.npy")
-def split_test(x,fold,test_value):
-    split=len(x)-(test_value*fold)
-    split2=split-test_value
-    x_test=np.copy(x[split2:split,:,:,:])
-    x_test=np.reshape(x_test,(test_value,512,512,1))
-    return np.uint8(x_test)
-def split_train(x,x_augmention,fold,test_value):
-    split=len(x)-(test_value*fold)
-    split2=split-test_value
-    x_train1=np.copy(x[:split2,:,:,:])
-    x_train2=np.copy(x[split:,:,:,:])
-    x_train3=np.concatenate((x_train1,x_train2),axis=None)
-    x_augmention1=np.copy(x_augmention[:split2,:,:,:])
-    x_augmention2=np.copy(x_augmention[split:,:,:,:])
-    x_augmention3=np.concatenate((x_augmention1,x_augmention2),axis=None)    
-    x_train=np.concatenate((x_train3,x_augmention3),axis=None)
-    x_train=np.reshape(x_train,((len(x)+len(x_augmention))-(2*test_value),512,512,1))
-    return np.uint8(x_train)
-def split_train_noaug(x,fold,test_value):
-    split=len(x)-(test_value*fold)
-    split2=split-test_value
-    x_train1=np.copy(x[:split2,:,:,:])
-    x_train2=np.copy(x[split:,:,:])
-    x_train=np.concatenate((x_train1,x_train2),axis=None)
-    x_train=np.reshape(x_train,(len(x)-test_value,512,512,1))
-    return np.uint8(x_train)
+x=np.load("/X.npy")
+y=np.load("/Y.npy")
+
+# if you have augmentions or you can use tensorflow library for augmention
+## You must be carefull to use Augmented data 
+# because we dont want to mix augmented data with train_data
+#For example you have an image which name is 1.png and we suppose that we applied augmention tecnique
+##Now , we have a augmented image which name is 1_aug.png
+## if original image is in train and augmented image is in test. We will get supperior results from model
+## but it is wrong technique . Bec. in train model has been learned with 1.png
+## be careful
+## I reccomend for augmention , tensorflow library,
+## https://www.tensorflow.org/tutorials/images/data_augmentation
+
+# x_augmention=np.load("/x_augmention.npy")
+# y_augmention=np.load("y_augmention.npy")
+
+###############################################################################
+### These things are  for manuel split . I dont recommend to use
+# # def split_test(x,fold,test_value):
+# #     split=len(x)-(test_value*fold)
+# #     split2=split-test_value
+# #     x_test=np.copy(x[split2:split,:,:,:])
+# #     x_test=np.reshape(x_test,(test_value,512,512,1))
+# #     return np.uint8(x_test)
+# # def split_train(x,x_augmention,fold,test_value):
+# #     split=len(x)-(test_value*fold)
+# #     split2=split-test_value
+# #     x_train1=np.copy(x[:split2,:,:,:])
+# #     x_train2=np.copy(x[split:,:,:,:])
+# #     x_train3=np.concatenate((x_train1,x_train2),axis=None)
+# #     x_augmention1=np.copy(x_augmention[:split2,:,:,:])
+# #     x_augmention2=np.copy(x_augmention[split:,:,:,:])
+# #     x_augmention3=np.concatenate((x_augmention1,x_augmention2),axis=None)    
+# #     x_train=np.concatenate((x_train3,x_augmention3),axis=None)
+# #     x_train=np.reshape(x_train,((len(x)+len(x_augmention))-(2*test_value),512,512,1))
+# #     return np.uint8(x_train)
+# # def split_train_noaug(x,fold,test_value):
+# #     split=len(x)-(test_value*fold)
+# #     split2=split-test_value
+# #     x_train1=np.copy(x[:split2,:,:,:])
+# #     x_train2=np.copy(x[split:,:,:])
+# #     x_train=np.concatenate((x_train1,x_train2),axis=None)
+# #     x_train=np.reshape(x_train,(len(x)-test_value,512,512,1))
+# #     return np.uint8(x_train)
+# fold_value=3
+# y_test=split_test(y,fold_value,11)
+# x_test=split_test(x,fold_value,11)
+# y_train=split_train(y,y_augmention,fold_value,11)
+# x_train=split_train(x,x_augmention,fold_value,11)
+###############################################################################
+
+##you can only use sklearn library
+#from sklearn.model_selection import train_test_split
+#x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_state=42)
 
 
-
-fold_value=3
-y_test=split_test(y,fold_value,11)
-x_test=split_test(x,fold_value,11)
-y_train=split_train(y,y_augmention,fold_value,11)
-x_train=split_train(x,x_augmention,fold_value,11)
-
+## we normalized images 
 x_test=x_test/255
 y_test=y_test/255
 x_train=x_train/255
@@ -126,6 +143,17 @@ model2 = Model( inputs = inputs, outputs = outputs)
 
 
 model2.compile(optimizer ='adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
-
-
 model2.summary()
+
+## Model Fitting
+epoch=250
+b_size=4
+model2.fit(x_train,y_train,batch_size=b_size,epochs=epoch,verbose=1)
+## model test 
+pred=model2.predict(x_test)
+## showing pred image
+plt.imshow(pred[4,:,:,0])
+
+## You can save models' weights custom path 
+##path="your_path"
+#model2.save(path)
