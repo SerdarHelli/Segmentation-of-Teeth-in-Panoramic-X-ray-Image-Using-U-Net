@@ -10,7 +10,6 @@ DATASET ref - 	H. Abdi, S. Kasaei, and M. Mehdizadeh, “Automatic segmentation 
 [Link DATASET for only original images.](https://data.mendeley.com/datasets/hxt48yk462/1)
 
 
-You have to create your masks.
 
 
 <img src="https://github.com/SerdarHelli/Semantic-Segmentation-of-Teeth-in-Panoramic-X-ray-Image/blob/master/Viewing_Estimations/Figures/example.png" alt="Results" width="1024" height="512">
