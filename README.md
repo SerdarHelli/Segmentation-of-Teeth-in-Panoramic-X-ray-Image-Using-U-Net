@@ -9,6 +9,7 @@ DATASET ref - 	H. Abdi, S. Kasaei, and M. Mehdizadeh, “Automatic segmentation 
 
 [Link DATASET for only original images.](https://data.mendeley.com/datasets/hxt48yk462/1)
 
+# Having Basic Usage , You can train your own model with Main.ipynb
 
 
 
