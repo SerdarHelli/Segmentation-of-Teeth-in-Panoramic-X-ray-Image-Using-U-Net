@@ -14,10 +14,15 @@ DATASET ref - 	H. Abdi, S. Kasaei, and M. Mehdizadeh, “Automatic segmentation 
 # Having Basic Usage , You can train your own model with Main.ipynb
 
 
+*****Examples of Model's Outputs*****
 
 <img src="https://github.com/SerdarHelli/Semantic-Segmentation-of-Teeth-in-Panoramic-X-ray-Image/blob/master/Viewing_Estimations/Figures/example.png" alt="Results" width="1024" height="512">
-This example of the model’s output has an effective segmentation map.
+
+*****Example of Final Output*****
+
 <img src="https://github.com/SerdarHelli/Semantic-Segmentation-of-Teeth-in-Panoramic-X-ray-Image/blob/master/Viewing_Estimations/Figures/exampleofcca.png" alt="Results" width="1024" height="512">
-In this example of binary image processing, teeth have successfully labeled
+
+
+*****Our neural network architecture.*****
+
 <img src="https://github.com/SerdarHelli/Semantic-Segmentation-of-Teeth-in-Panoramic-X-ray-Image/blob/master/Viewing_Estimations/Figures/Architecture.png" alt="Results" width="1024" height="512">
-Our neural network architecture.
